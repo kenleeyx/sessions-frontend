@@ -18,8 +18,8 @@ export const SearchType = ({ motion }) => {
                     <div className = 'h-full overflow-hidden'>
                         <img className = 'h-full w-full object-cover' src = 'https://firebasestorage.googleapis.com/v0/b/sessions-7df6d.appspot.com/o/utilities%2Fpiano.webp?alt=media&token=f15157dd-9f40-44e5-a321-ab15c5a2348b' />
             </div>
-            <div className='flex bg-white text-3xl font-bold text-blue-800 rounded-[50%] border border-black h-[8rem] w-[8rem] items-center absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2'>
-                    <Link to="/search/users" className = 'text-center text-blue-800 '> Search Users</Link>
+            <div className='flex bg-white text-3xl font-bold text-blue-800 rounded-[50%] border border-black h-[10rem] w-[10rem] items-center absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2'>
+                    <Link to="/search/users" className = 'text-center text-blue-800 '> Search Musicians</Link>
                 </div>
             </div>
                 

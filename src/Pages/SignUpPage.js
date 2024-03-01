@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { auth } from "../firebase/firebase"
+import { signInWithCustomToken } from "firebase/auth";
+
 
 // Import Icons
 import { BackwardIcon } from "@heroicons/react/24/solid";
@@ -42,6 +45,7 @@ export const SignUpPage = ({ motion }) => {
       console.log("Bearer " + checkUser.data.data);
       localStorage.setItem("token", "Bearer " + checkUser.data.data);
       localStorage.setItem("refresh", "Bearer " + checkUser.data.refresh)
+      signInWithCustomToken(auth, checkUser.data.data)
 
       alert("New User Created!");
       navigate("/profilepictureupload");

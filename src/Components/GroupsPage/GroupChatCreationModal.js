@@ -7,11 +7,21 @@ import { useNavigate } from "react-router-dom";
 export const GroupChatCreationModal = ({ groupId, groupName, onClose }) => {
   const [members, setMembers] = useState([]);
   const [selectedMembers, setSelectedMembers] = useState([]);
-  const { userId } = useContext(UserContext);
+  // const { userId } = useContext(UserContext);
+  const [userId, setUserId] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch group members
+    const getCurrentUser = async () => {
+      let currentUserInfo = await apiRequest.get(
+        `users/getCurrentUser`
+      );
+      setUserId(currentUserInfo.data.user.id);
+    };
+
+    getCurrentUser();
+
     const fetchMembers = async () => {
       try {
         const response = await apiRequest.get(`groups/${groupId}/members`); 
@@ -51,6 +61,7 @@ export const GroupChatCreationModal = ({ groupId, groupName, onClose }) => {
 
   const createChat = async () => {
     console.log('foo')
+    console.log(userId)
     // collect the IDs of the selected members 
     const memberIds = selectedMembers.map((member) => member.id);
 

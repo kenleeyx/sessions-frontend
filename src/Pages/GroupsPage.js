@@ -12,9 +12,10 @@ export const GroupsPage = ({ motion }) => {
 
   useEffect(() => {
     const fetchGroups = async () => {
-       if (!userId) {
-         return;
-       }
+      console.log('fetching')
+      //  if (!userId) {
+      //    return;
+      //  }
       try {
         const response = await apiRequest.get(`groups/${userId}`);
         console.log(response.data)
@@ -26,7 +27,7 @@ export const GroupsPage = ({ motion }) => {
 
     fetchGroups();
 
-  }, []);
+  }, [userId]);
 
    const handleGroupClick = (group) => {
      navigate(`/group/${group.id}`, {state: {group}});

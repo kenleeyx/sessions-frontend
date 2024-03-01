@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../App.js";
+// import { auth } from "../firebase/firebase"
+// import { signInWithCustomToken } from "firebase/auth";
 
 // Import Icons
 import { BackwardIcon } from "@heroicons/react/24/solid";
@@ -81,6 +83,7 @@ export const LoginPage = ({ motion }) => {
       // localStorage.setItem('userName', user.username)
       localStorage.setItem("token", "Bearer " + checkUser.data.data);
       localStorage.setItem("refresh", "Bearer " + checkUser.data.refresh)
+      // signInWithCustomToken(auth, checkUser.data.data) //to implement multer next time on BE to upload images securely - see p3notes
       navigate("/search/type");
     } else {
       alert("Sign in unsuccessful. " + checkUser.data.msg);
