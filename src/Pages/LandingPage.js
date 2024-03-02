@@ -1,13 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../App.js";
 
 export const LandingPage = ({ motion }) => {
   const [loadedVideo, setLoadedVideo] = useState(false);
+  const context = useContext(UserContext);
+  const navigate = useNavigate();
   const VIDEO_URL =
     "https://firebasestorage.googleapis.com/v0/b/rocket-sessions.appspot.com/o/seederfiles%2Fjamminghd.mp4?alt=media&token=7664dd7c-922a-417a-858f-d03e45aa0d80";
-  const navigate = useNavigate();
+
 
   const titletext = "SESSIONS";
+
+  const handleDemoSignIn = async () => {
+    let checkUser = await axios.post(
+      `${process.env.REACT_APP_BACKEND_URL}/users/jwtLogIn`,
+      { fullName: "Tough Guy", password: "hello5"}
+    )
+    .catch(error => {
+      alert(error.message)
+   });
+   if (checkUser?.data.success === true) {
+    context.setUserId(checkUser.data.id)
+    context.setUserName("Tough Guy")
+    localStorage.setItem("token", "Bearer " + checkUser.data.data);
+    localStorage.setItem("refresh", "Bearer " + checkUser.data.refresh)
+    navigate("/search/type");
+  } else {
+    if (checkUser) {
+      alert("Sign in unsuccessful. " + checkUser.data.msg);
+    } else {
+      alert("Sign in unsuccessful. ");
+    }
+  }
+  };
 
   return (
     <>
@@ -71,6 +98,12 @@ export const LandingPage = ({ motion }) => {
                   navigate("signup");
                 }}
                 className="secondary-cta-btn w-[100%] lg:w-[50%] "
+              />
+              <input 
+              type="button"
+              value= "Demo user"
+              onClick={handleDemoSignIn}
+              className='text-yellow-500 font-semibold'
               />
             </div>
           </motion.div>

@@ -70,10 +70,14 @@ export const LoginPage = ({ motion }) => {
     let checkUser = await axios.post(
       `${process.env.REACT_APP_BACKEND_URL}/users/jwtLogIn`,
       { fullName: user.username, password: user.password }
-    );
-    console.log("checkuser in database: ", checkUser.data);
+    )
+    .catch(error => {
+      alert(error.message)
+   });
+   console.log(checkUser)
+    //console.log("checkuser in database: ", checkUser.data);
 
-    if (checkUser.data.success === true) {
+    if (checkUser?.data.success === true) {
       setIsAuthenticated(true);
       console.log("Bearer " + checkUser.data.data);
       console.log(checkUser)
@@ -86,7 +90,12 @@ export const LoginPage = ({ motion }) => {
       // signInWithCustomToken(auth, checkUser.data.data) //to implement multer next time on BE to upload images securely - see p3notes
       navigate("/search/type");
     } else {
-      alert("Sign in unsuccessful. " + checkUser.data.msg);
+      if (checkUser) {
+        alert("Sign in unsuccessful. " + checkUser.data.msg);
+      } else {
+        alert("Sign in unsuccessful. ");
+      }
+      
     }
   };
 
