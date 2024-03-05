@@ -1,6 +1,8 @@
 # Sessions: The networking app for musicians
 Sessions is an all-in-one app for musicians of all levels from beginner to professional, to search up other musicians, connect, form groups and organise rehearsal and concert events. 
 
+You can access the app online at [https://sessionsjam.netlify.app/](https://sessionsjam.netlify.app/).
+
 ## Who is this app for?
 - Musicians looking for other musicians to jam with
 - Prospective music students looking for teachers
