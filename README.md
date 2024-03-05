@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Sessions: The networking app for musicians
+Sessions is an all-in-one app for musicians of all levels from beginner to professional, to search up other musicians, connect, form groups and organise rehearsal and concert events. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Who is this app for?
+- Musicians looking for other musicians to jam with
+- Prospective music students looking for teachers
+- Musical ensembles looking for people to fill vacancies
+- People looking to hire musicians for events
+- Freelance musicians/groups/teachers intending to hire out their services
 
-## Available Scripts
+## Features
+- Profile page: Indicate your instruments, interests, ensembles and skill level
+- Video upload: Grades and recommendations only go so far. This is how you walk the talk!
+- Group pages: Tell everyone about your group, who's in it, what you play, and don't forget to upload videos!
+- Musician and group search: Filter by instrument, interest, skill level, genre to find the perfect musician to jam with, the perfect teacher or the perfect group to join.
+- Connections: Recommendations from good musician go a long way towards landing gigs with new contacts. 
+- Chat: Get to know your new connections and organise meetups to jam with your groups!
+- Notifications: Get notified when people want to connect with you or form a band!
+- Events(upcoming): Post your upcoming events on your own profile or group pages, schedule rehearsals, add rehearsal notes, and send calendar invites to members!
 
-In the project directory, you can run:
+## Developer information
+This project was created by the following team as part of the requirements for Rocket Academy's Software Engineering Bootcamp.
+- Kenneth Lee @kenleeyx (Contact me if you have ideas or code to contribute!)
+- Thia Shan Quan @shanquanSQ
+- Sathya Thenappan @sathyat
 
-### `npm start`
+## Tech stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Frontend**
+- React.JS
+- TailwindCSS
+- React Router
+- Framer Motion
+- Socket.IO
+- jsonwebtoken
+- Hosted on Netlify
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Backend**
+- PostgreSQL
+- Express
+- Sequelize
+- Firebase
+- Socket.IO
+- Redis
+- Hosted on Fly.io

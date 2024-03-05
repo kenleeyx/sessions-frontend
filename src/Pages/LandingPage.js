@@ -99,6 +99,7 @@ export const LandingPage = ({ motion }) => {
                 }}
                 className="secondary-cta-btn w-[100%] lg:w-[50%] "
               />
+              <br />
               <input 
               type="button"
               value= "Demo user"
