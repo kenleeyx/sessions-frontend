@@ -191,16 +191,21 @@ export const ProfilePage = ({ motion, loggedInUserId }) => {
           {pageOwnerInfo && <Connections displayedUserId={pageOwnerInfo.id} />}
 
           {/* LOGOUT BUTTON */}
-          <div className="pt-[1.5em]">
-            <form>
-              <input
-                type="button"
-                value="LOGOUT"
-                onClick={() => {handleLogOut()}}
-                className="secondary-cta-btn w-[100%] lg:w-[100%]"
-              />
-            </form>
-          </div>
+          {isOwnPage ?
+            (
+              <div className="pt-[1.5em]">
+                <form>
+                  <input
+                    type="button"
+                    value="LOGOUT"
+                    onClick={() => { handleLogOut() }}
+                    className="secondary-cta-btn w-[100%] lg:w-[100%]"
+                  />
+                </form>
+              </div>
+            )
+            : null
+          }
         </div>
         {/* </div> */}
 

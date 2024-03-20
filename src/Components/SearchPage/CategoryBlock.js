@@ -27,13 +27,14 @@ export const CategoryBlock = ({ searchMode, category, filterCriteria, setFilterC
         } else {
             getOptionsFromDatabase();
         }
-    }, []);
+    }, [category]);
 
     return (
         <div className='flex flex-row w-full items-center'>
             <h1 className='text-xl font-bold w-[6em]'>{category}</h1>
             {options ? 
             <Select
+                id= {`input-${category}-select`}
                 className='w-[10em] mx-[1em]'
                 defaultValue={{ value: category, label: category }}
                 size="10"
